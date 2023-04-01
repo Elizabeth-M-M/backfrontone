@@ -1337,3 +1337,30 @@ Processing by SessionsController#create as */*
 Completed 422 Unprocessable Entity in 6ms (Views: 2.1ms | ActiveRecord: 0.3ms | Allocations: 609)
 
 
+Started GET "/me" for 127.0.0.1 at 2023-04-01 09:45:11 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 404 Not Found in 169ms (Views: 2.2ms | ActiveRecord: 0.8ms | Allocations: 22808)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-04-01 09:45:11 +0300
+Processing by UsersController#show as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 404 Not Found in 3ms (Views: 1.1ms | ActiveRecord: 0.0ms | Allocations: 365)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-04-01 09:45:17 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"EllaMeKen", "password"=>"[FILTERED]", "session"=>{"username"=>"EllaMeKen", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "EllaMeKen"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.33ms)
+Completed 200 OK in 387ms (Views: 7.0ms | ActiveRecord: 0.8ms | Allocations: 19013)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-04-01 09:45:18 +0300
+Processing by SessionsController#destroy as */*
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 182)
+
+
